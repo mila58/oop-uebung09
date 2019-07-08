@@ -1,15 +1,13 @@
 package ueb09.fz;
 
-public class Fahrrad {
-	private String hersteller;
-	private String modell;
+public class Fahrrad extends Fortbewegungsmittel {
+
 	private int gaenge;
 	private boolean ruecktrittbremse;
 	private Cantileverbremse[] bremsen;
 
 	public Fahrrad(String hersteller, String modell, int gaenge, boolean ruecktrittbremse) {
-		this.hersteller = hersteller;
-		this.modell = modell;
+		super(hersteller, modell);
 		this.gaenge = gaenge;
 		this.ruecktrittbremse = ruecktrittbremse;
 
@@ -17,7 +15,7 @@ public class Fahrrad {
 	}
 
 	public String toString() {
-		return "Ich bin ein " + hersteller + " " + modell + " mit "
+		return super.toString()
 				+ gaenge + " Gängen"
 				+ (ruecktrittbremse ? ", Rücktrittbremse" : "")
 				+ " und " + bremsen.length + " " + bremsen[0].toString();
